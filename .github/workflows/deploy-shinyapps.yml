@@ -38,6 +38,12 @@ jobs:
           ))
         shell: Rscript {0}
 
+      - name: Verify app returns a Shiny app object
+        run: |
+          result <- source("app.R", local = new.env(parent = globalenv()))
+          stopifnot(inherits(result$value, "shiny.appobj"))
+        shell: Rscript {0}
+
       - name: Deploy to shinyapps.io
         env:
           SHINYAPPS_ACCOUNT: ${{ secrets.SHINYAPPS_ACCOUNT }}

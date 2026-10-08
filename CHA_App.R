@@ -43,4 +43,4 @@ server <- function(input, output, session) {
   mod_migratory_server("migratory", main_data$eaaa, main_data$footprint, THRESHOLDS$migratory, main_data$study_crs)
 }
 
-shinyApp(ui, server)
+app <- shinyApp(ui, server)
