@@ -30,6 +30,7 @@ library(shinydashboard)
 library(leaflet)
 library(sf)
 library(DT)
+library(dplyr)
 
 # Allow larger uploads (occurrence CSVs / shapefiles can be sizeable)
 options(shiny.maxRequestSize = 300 * 1024^2)  # 300 MB
